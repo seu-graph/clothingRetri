@@ -98,7 +98,6 @@ def feat_extractor(model, data_loader, logger=None):
         if i % 10 == 0:
             print(i, '/', len(data_loader))
         with torch.no_grad():
-            # out = model(imgs)[1].data.cpu().numpy()
             out = model(imgs).data.cpu().numpy()
             feats.append(out)
 
